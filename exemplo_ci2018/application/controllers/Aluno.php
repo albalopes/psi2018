@@ -2,15 +2,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Aluno extends CI_Controller {
-   
+       
     public function index(){
-        $this->load->view('template/cabecalho');
-        $this->load->view('template/nav');
-        $this->load->view('olamundo');
-        $this->load->view('template/rodape');
+        if ($this->session->has_userdata('usuario')){
+            $this->load->view('template/cabecalho');
+            $this->load->view('template/nav');
+            $this->load->view('olamundo');
+            $this->load->view('template/rodape');
+        }else{
+            redirect('usuario/login');
+        }
     }
 
     public function listar(){
+  
+            
          $meusalunos = array("Maria", "José", "Carlos", "Pedro", "Noadia", "Savio", "Saulo");
             
             $dados['titulo'] ="Listagem de alunos";

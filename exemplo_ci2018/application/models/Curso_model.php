@@ -42,9 +42,8 @@ class Curso_model extends CI_Model{
        $this->db->delete('curso');
     }
     
-    public function update(){
-        $this->db->set('nome', $this->nome);
-        $this->db->set('descricao', $this->descricao);
+    public function update($dados){
+        $this->db->set($dados);
         $this->db->where('id', $this->id);
         $this->db->update('curso');
     }

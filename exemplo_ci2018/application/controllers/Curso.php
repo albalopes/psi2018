@@ -55,10 +55,9 @@ class Curso extends CI_Controller {
    
    public function atualizar($id){
         $this->load->model('Curso_model');
-         $this->Curso_model->nome = $_POST["nome"];
-         $this->Curso_model->descricao = $_POST["descricao"];
+        $dados = array("nome"=> $_POST["nome"], "descricao"=>$_POST["descricao"]);
          $this->Curso_model->id = $id;
-         $this->Curso_model->update();
+         $this->Curso_model->update($dados);
          redirect('curso/listar');
    }
 }
