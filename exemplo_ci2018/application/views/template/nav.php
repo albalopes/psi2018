@@ -24,6 +24,8 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= base_url('aluno/media/10/8')?>">Boletim</a>
+            </li><li class="nav-item">
+              <a class="nav-link" href="<?= base_url('usuario/logoff')?>">Sair</a>
             </li>
           </ul>
         </div>
