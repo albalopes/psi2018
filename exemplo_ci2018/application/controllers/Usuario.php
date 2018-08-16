@@ -3,11 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario extends CI_Controller {
    
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('Usuario_model');
+    }
+    
     public function autenticar(){
-        $usuario = $_POST["usuario"];
+        $login = $_POST["usuario"];
         $senha = $_POST["senha"];
         
-        if ($usuario == "maria" && $senha=="123"){
+        $usuario = $this->Usuario_model->recuperarPorLoginESenha($login, $senha);
+        
+        if ($usuario){
             $this->session->set_userdata("usuario", $usuario);
             redirect('/');
         }else{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 14-Jun-2018 às 16:50
+-- Generation Time: 16-Ago-2018 às 13:32
 -- Versão do servidor: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -51,8 +51,31 @@ CREATE TABLE `curso` (
 --
 
 INSERT INTO `curso` (`id`, `nome`, `descricao`) VALUES
-(1, 'Informática para internet', 'Esse curso ensina...'),
-(3, 'Comércio', 'Esse curso estuda como ');
+(1, 'Curso de Informática', 'Curso sobre o ensino de programação e construção de sites de internet'),
+(3, 'Licenciatura em Informática', 'Esse curso estuda como ');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `login` varchar(50) NOT NULL,
+  `senha` varchar(50) NOT NULL,
+  `tipo` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `tipo`, `email`) VALUES
+(1, 'Maria José da Costa', 'maria', '123456', 1, 'maria@email.com'),
+(2, 'José Pereira da Silva', 'jose', '654321', 2, 'jose@email.com');
 
 --
 -- Indexes for dumped tables
@@ -72,6 +95,12 @@ ALTER TABLE `curso`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -79,7 +108,12 @@ ALTER TABLE `curso`
 -- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
