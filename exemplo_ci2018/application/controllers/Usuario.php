@@ -32,4 +32,11 @@ class Usuario extends CI_Controller {
         redirect('usuario/login');
     }
     
+   public function restricao(){
+    $this->load->view('template/cabecalho');
+    $this->load->view('template/nav');
+    $this->load->view('acessonegado');
+    $this->load->view('template/rodape');
+    }
+    
 }

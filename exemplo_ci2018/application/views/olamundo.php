@@ -1,2 +1,4 @@
-
-        <h2>Olá Mundo!</h2>
+<?php 
+    $u = $this->session->userdata('usuario');
+?>
+    <h2>Olá <?= $u->nome;?></h2>
