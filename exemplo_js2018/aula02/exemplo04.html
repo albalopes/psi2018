@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/>
+    <script>
+        function criarArray(){
+            var frutas = ["pera", "uva", "maca", "melao", "melancia", "caju"];
+            frutas.push("banana");
+            frutas[7] = "acerola";
+            frutas[0] = "caja";
+            alert("O array possui "+ frutas.length + " elementos");
+            alert("O último elemento é: "+ frutas[frutas.length-1]);
+        }
+    </script>
+</head>
+
+
+<body>
+    <p onclick="criarArray()">Clique aqui</p>
+</body>
+</html>
