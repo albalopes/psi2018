@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/></head>
+<body>
+ 
+    <p>Q1: Quanto é 2*7?</p>
+    <input type="text" id="resposta"/>
+    <button type="button" onclick="corrigir()">CORRIGIR</button>
+    <p id="correcao"></p>
+
+    <script>
+        function corrigir(){
+            var resp = document.getElementById("resposta").value;
+            if (resp == 14){
+                document.getElementById("correcao").innerHTML ="CORRETO";
+            }else{
+                document.getElementById("correcao").innerHTML ="ERRADO";
+            }
+        }
+    </script>
+</body>
+</html>
