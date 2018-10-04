@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/>
+<script>
+var cestadefrutas = [];
+function preencherCesta(){
+    var minhafruta = document.getElementById("fruta").value;
+    cestadefrutas.push(minhafruta);
+    document.getElementById("fruta").value = "";
+}
+function verCesta(){
+    document.getElementById("listadefrutas").innerHTML = "";
+    for(i=0; i<cestadefrutas.length; i++){
+        document.getElementById("listadefrutas").innerHTML += 
+        cestadefrutas[i]+"<br/>";
+    }
+}
+</script>
+</head><body>
+ <form>
+  Fruta: <input type="text" id="fruta"/>
+  <button type="button" onclick="preencherCesta()">Adicionar
+  </button>
+  <button type="button" onclick="verCesta()">Ver frutas na cesta</button>
+  <h2>Cesta de Frutas</h2>
+  <div id="listadefrutas"></div>
+ </form>
+</body>
+</html>
